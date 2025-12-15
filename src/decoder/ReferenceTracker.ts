@@ -136,9 +136,15 @@ export class ReferenceTracker {
             const name = (typeof(fieldOrOperation) === "number")
                     ? OPERATION[fieldOrOperation]
                     : fieldOrOperation
-            throw new Error(
-                `Can't addCallback on '${name}' (refId is undefined)`
-            );
+            console.error(`Can't addCallback on '${name}' (refId is undefined)`);
+            // throw new Error(
+            //     `Can't addCallback on '${name}' (refId is undefined)`
+            // );
+            return;
+        }
+        if(fieldOrOperation === undefined || callback === undefined) { //if somehow the field or operation or callback is undefined at this point
+            console.error(`Can't addCallback on refId '${refId}' (fieldOrOperation is undefined), or callback is undefined`);
+            return;
         }
         if (!this.callbacks[refId]) {
             this.callbacks[refId] = {};
