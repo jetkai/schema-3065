@@ -1,0 +1,21 @@
+name: Feature request
+description: Want to submit an idea? Propose a change or feature request
+title: "[Feature]: "
+labels: [':rocket: feature', ':eyes: triage']
+body:
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description & Use case
+      description: >-
+        Please provide the use case and description of the feature you'd like to see implemented.
+    validations:
+      required: true
+
+  - type: textarea
+    id: api
+    attributes:
+      label: "Optional: Proposed API"
+      description: >-
+        If your request is an addition or change to the current API, please provide proposed API here.
